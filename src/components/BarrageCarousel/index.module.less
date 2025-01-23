@@ -1,0 +1,38 @@
+.barrageCarouselContainer {
+	width: 400px;
+	height: 80px;
+	border: 1px solid #000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 50px auto;
+	.BarrageListContainer {
+		width: 100%;
+		height: 28px;
+		overflow: hidden;
+		position: relative;
+		margin: 10px 0;
+		display: flex;
+		.barrageRow {
+			height: 100%;
+			flex-direction: row;
+			position: absolute;
+			left: 0;
+			top: 0;
+			// css绝对定位 自适应宽度的问题：https://blog.csdn.net/liyangready/article/details/40948639
+			display: inline-flex;
+			white-space: nowrap;
+			.barrageItem {
+				height: 100%;
+				border-radius: 20px;
+				margin-right: 8px;
+				background-color: #ff85d5;
+				flex-shrink: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 0 10px;
+			}
+		}
+	}
+}
