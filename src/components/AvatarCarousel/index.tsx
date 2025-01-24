@@ -46,7 +46,6 @@ const AvatarCarousel = () => {
 		avatarTimerRef.current = setInterval(next, 1600);
 		// 组件销毁时清除定时器
 		return () => clearInterval(avatarTimerRef.current);
-		return undefined;
 	}, []);
 
 	return (
