@@ -16,12 +16,14 @@
 		.barrageRow {
 			height: 100%;
 			flex-direction: row;
-			position: absolute;
-			left: 0;
-			top: 0;
+			// position: absolute;
+			// left: 0;
+			// top: 0;
 			// css绝对定位 自适应宽度的问题：https://blog.csdn.net/liyangready/article/details/40948639
 			display: inline-flex;
 			white-space: nowrap;
+			will-change: transform; // 使用will-change来提高页面的渲染速度，优化动画性能
+			animation: scrolling 10s linear infinite;
 			.barrageItem {
 				height: 100%;
 				border-radius: 20px;
@@ -34,5 +36,14 @@
 				padding: 0 10px;
 			}
 		}
+	}
+}
+
+@keyframes scrolling {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
 	}
 }

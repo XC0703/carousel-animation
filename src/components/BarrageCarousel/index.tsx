@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from 'react';
 
 import styles from './index.module.less';
 
-const PARENT_WIDTH = 400; // 弹幕容器宽度，单位px
+// const PARENT_WIDTH = 400; // 弹幕容器宽度，单位px
 const BARRAGE_SPEED = 80; // 弹幕速度（px/s）
 
 interface BarrageItemDTO {
@@ -62,12 +63,12 @@ const BarrageCarousel = () => {
 	};
 
 	// 实现弹幕滚动的原理：设置一前一后两个容器，前一个容器显示完后，后一个容器开始显示，同时前一个容器重置位置
-	useEffect(() => {
-		initAnimate();
-		return () => {
-			destoryRef.current = true;
-		};
-	}, []);
+	// useEffect(() => {
+	// 	initAnimate();
+	// 	return () => {
+	// 		destoryRef.current = true;
+	// 	};
+	// }, []);
 
 	// 动画初始化
 	const initAnimate = () => {
@@ -162,18 +163,18 @@ const BarrageCarousel = () => {
 				<div
 					className={styles.barrageRow}
 					ref={moveBarPreRef}
-					style={{
-						transform: `translateX(${0}px)`
-					}}
+					// style={{
+					// 	transform: `translateX(${0}px)`
+					// }}
 				>
 					<BarrageRow barrageRowData={barrageArrayData} rowIndex={0} />
 				</div>
 				<div
 					className={styles.barrageRow}
 					ref={moveBarNextRef}
-					style={{
-						transform: `translateX(${PARENT_WIDTH}px)`
-					}}
+					// style={{
+					// 	transform: `translateX(${PARENT_WIDTH}px)`
+					// }}
 				>
 					<BarrageRow barrageRowData={barrageArrayData} rowIndex={1} />
 				</div>
